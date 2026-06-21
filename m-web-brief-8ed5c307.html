@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 简明产品说明与访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f9f6f0;
+            color: #2b2a28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fffcf7;
+            padding: 2.5rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efe7dc;
+        }
+
+        /* 文章排版 */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 550;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.3rem;
+            color: #1e1d1b;
+            border-left: 5px solid #bc9b7a;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7a7167;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 5px solid transparent;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 520;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #3d3832;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed #dcd2c4;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #4d453c;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* 引用块 / 提示框 */
+        blockquote {
+            background: #ede8e0;
+            border-left: 5px solid #a8896b;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px 6px 6px 12px;
+            font-size: 0.95rem;
+            color: #3b3731;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        blockquote p {
+            margin-bottom: 0.3rem;
+        }
+
+        .tip-box {
+            background: #f3eee6;
+            border-left: 5px solid #7f8c8d;
+            padding: 1rem 1.5rem;
+            border-radius: 12px 6px 6px 12px;
+            margin: 1.5rem 0;
+            color: #3c3a36;
+            font-size: 0.95rem;
+        }
+
+        .tip-box strong {
+            color: #5b4e3f;
+        }
+
+        /* 链接 */
+        a {
+            color: #6f5e4c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbb7a3;
+            transition: color 0.15s, text-decoration-color 0.15s;
+        }
+
+        a:hover {
+            color: #3d3025;
+            text-decoration-color: #6f5e4c;
+        }
+
+        /* 特点小列表 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #f7f2ea;
+            padding: 0.9rem 1rem;
+            border-radius: 16px;
+            border: 1px solid #e5dbcf;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .feature-item span {
+            display: block;
+            font-weight: 450;
+            color: #4b4137;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-item small {
+            color: #7d7266;
+            font-size: 0.85rem;
+        }
+
+        /* 场景卡片 */
+        .scene-card {
+            background: #f5f0e9;
+            padding: 1.2rem 1.4rem;
+            border-radius: 18px;
+            margin: 1rem 0 1.5rem 0;
+            border: 1px solid #e2d7cb;
+        }
+
+        .scene-card p {
+            margin-bottom: 0.4rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-group {
+            margin: 1.2rem 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-top: 0.8rem;
+            color: #3f392f;
+        }
+
+        .faq-a {
+            margin-left: 0.5rem;
+            color: #5a5247;
+        }
+
+        hr {
+            margin: 2rem 0 1rem 0;
+            border: none;
+            border-top: 1px solid #e1d6c8;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #8c8277;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5dbcf;
+            text-align: left;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+            .feature-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>爱游戏 · 简明使用指南</h1>
+    <div class="subhead">功能摘要 · 访问提醒 · 适用场景</div>
+
+    <p>
+        对于希望快速了解一款轻量级网页游戏工具的用户而言，<a href="https://m-web-aiyouxi.com.cn">爱游戏</a>
+        提供了基于前端技术的休闲内容聚合。本文从产品说明、核心特点、使用建议以及必要的访问注意角度出发，
+        帮助你更清楚地判断它是否符合你的日常需求。以下内容不构成任何承诺，仅基于公开信息整理。
+    </p>
+
+    <h2>▎核心亮点</h2>
+    <p>
+        与许多需要安装客户端的游戏平台不同，爱游戏以网页为载体，无需下载额外软件即可在移动端或桌面端尝试。
+        界面围绕“轻启动、快反馈”设计，适合碎片时间打开。主要特点包括：
+    </p>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span>📂 无需注册</span>
+            <small>部分内容可直接体验，降低决策门槛</small>
+        </div>
+        <div class="feature-item">
+            <span>📱 响应式适配</span>
+            <small>手机与电脑浏览器均可正常显示</small>
+        </div>
+        <div class="feature-item">
+            <span>🧩 内容更新</span>
+            <small>页面素材与游戏列表定期调整</small>
+        </div>
+    </div>
+
+    <blockquote>
+        <p><strong>提醒：</strong>爱游戏本质是网页前端项目，所有交互均在浏览器内完成。
+        不涉及用户数据上传，也不提供任何形式的充值或交易通道。请放心使用，同时注意识别第三方广告（如有）。</p>
+    </blockquote>
+
+    <h2>▎使用建议</h2>
+    <p>
+        考虑到不同网络环境与设备性能，这里提供几条具体建议，帮助你获得更稳定的浏览体验：
+    </p>
+    <div class="tip-box">
+        <strong>1. 保持浏览器更新</strong><br>
+        使用最新版 Chrome、Edge 或 Safari，确保 JavaScript 与 CSS 特性正常渲染。
+    </div>
+    <div class="tip-box">
+        <strong>2. 网络连接</strong><br>
+        页面所有资源托管于常规 CDN，建议在 Wi-Fi 或稳定 4G/5G 下打开，避免加载延迟。
+    </div>
+    <div class="tip-box">
+        <strong>3. 关闭广告拦截（按需）</strong><br>
+        部分拦截插件可能误伤页面样式或功能，如遇显示异常可尝试暂时关闭。
+    </div>
+
+    <h2>▎典型使用场景</h2>
+    <div class="scene-card">
+        <p><strong>🧘 等待间隙</strong> —— 等车、排队、咖啡休息时，通过手机打开爱游戏，浏览几款轻交互内容，无需长时间投入。</p>
+        <p><strong>🖥️ 桌面端快速预览</strong> —— 在电脑浏览器中直接访问，适合在办公间歇切换一下心情，不占用硬盘空间。</p>
+        <p><strong>📚 产品体验参考</strong> —— 对于前端学习者或产品爱好者，爱游戏可作为移动端 Web 游戏交互的案例之一。</p>
+    </div>
+
+    <h2>▎常见问题摘要</h2>
+    <div class="faq-group">
+        <div class="faq-q">Q：爱游戏是否需要安装？</div>
+        <div class="faq-a">A：不需要。它完全通过浏览器工作，打开 <a href="https://m-web-aiyouxi.com.cn">爱游戏</a> 即可。</div>
+
+        <div class="faq-q">Q：所有内容都免费吗？</div>
+        <div class="faq-a">A：截至当前版本，页面内展示的游戏与功能均免费体验，不涉及内购或订阅。</div>
+
+        <div class="faq-q">Q：页面加载缓慢怎么办？</div>
+        <div class="faq-a">A：可以先尝试刷新页面或切换网络；如果问题持续，可能与 CDN 或区域网络有关，建议稍后重试。</div>
+
+        <div class="faq-q">Q：是否收集个人信息？</div>
+        <div class="faq-a">A：爱游戏不设置注册入口，不主动收集任何用户信息。第三方嵌入内容（如果有）则遵循各自隐私政策。</div>
+    </div>
+
+    <hr>
+
+    <p style="margin-bottom: 0.2rem;">
+        <strong>最后补充：</strong> 任何网页服务都可能因维护、升级或不可抗力暂停开放。如果你对当前版本满意，
+        建议定期访问 <a href="https://m-web-aiyouxi.com.cn">爱游戏</a> 查看更新。
+        本文档仅作为产品说明与使用参考，不构成任何形式的质量保证。
+    </p>
+
+    <div class="footer-note">
+        ✦ 页面内容仅作介绍，实际体验以网站为准 · 使用即表示你理解并接受上述说明
+    </div>
+
+</div>
+</body>
+</html>
