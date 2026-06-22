@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>信息整理索引 · 大发娱乐</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      line-height: 1.7;
+      background-color: #f7f5f2;
+      color: #25221e;
+    }
+
+    /* 深色头图 – 落地页 hero */
+    .hero {
+      background: linear-gradient(145deg, #0b0a0e 0%, #1e1b17 100%);
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      color: #edeae3;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+      color: #f0ecde;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.8;
+      max-width: 640px;
+      margin: 0.8rem auto 0;
+      border-top: 1px solid rgba(255, 242, 220, 0.2);
+      padding-top: 1.2rem;
+    }
+
+    .hero .sub span {
+      display: inline-block;
+      background: rgba(255, 242, 220, 0.08);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 浅色正文区 / 卡片容器 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.8rem 2rem;
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 360;
+      margin: 2.4rem 0 1.2rem;
+      border-left: 4px solid #b9543a;
+      padding-left: 1rem;
+      letter-spacing: 0.5px;
+      color: #2f2a25;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s;
+      border: 1px solid #ece7e0;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      font-weight: 420;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: #3c332c;
+    }
+
+    .card p {
+      color: #4e453d;
+      font-size: 0.98rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #f0e9e0;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      color: #6f5f4f;
+      margin-top: 1rem;
+      letter-spacing: 0.4px;
+    }
+
+    .text-block {
+      background: white;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #e7e0d8;
+    }
+
+    .text-block p {
+      margin: 0.8rem 0;
+    }
+
+    /* 强调色用于链接 */
+    a {
+      color: #b14e33;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #b14e33;
+    }
+
+    /* FAQ 摘要 – 紧凑 */
+    .faq-item {
+      margin: 1.4rem 0;
+      border-bottom: 1px dashed #dbd2c9;
+      padding-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #332d27;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item p {
+      color: #4f463d;
+      font-size: 0.95rem;
+    }
+
+    .bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.2rem;
+      border-top: 1px solid #ddd6cc;
+      padding-top: 2.2rem;
+      margin: 2.8rem 0 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .bottom-links small {
+      color: #7c6f60;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #7d7265;
+      font-size: 0.85rem;
+      border-top: 1px solid #e5ddd2;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .container { padding: 2rem 1rem; }
+      .card-grid { gap: 1.2rem; }
+      .text-block { padding: 1.4rem; }
+    }
+
+    /* 视觉点缀 */
+    .quiet-meta {
+      color: #8c7e6d;
+      font-size: 0.9rem;
+      border-left: 2px solid #c9b8a7;
+      padding-left: 0.8rem;
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- hero 区：深色头图，克制叙述 -->
+  <header class="hero">
+    <h1>大发娱乐 · 资料整理笔记</h1>
+    <div class="sub">
+      <span>信息索引 · 内容归档 · 场景梳理</span>
+      <p style="margin-top: 0.8rem; font-weight: 300; font-size: 1rem; opacity: 0.75;">
+        一份关于娱乐内容整理方式的简要记录，不构成引导或建议。
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 优势区 / 卡片 -->
+    <h2 class="section-title">从信息整理角度看到的几个侧面</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>分类与索引</h3>
+        <p>内容按类型、场景和来源进行简单标记，方便在需要时快速回溯。归档方式保持克制，不做主观评价。</p>
+        <span class="tag">整理习惯</span>
+      </div>
+      <div class="card">
+        <h3>场景适配</h3>
+        <p>不同界面和交互逻辑对应不同使用习惯，记录一些常见的操作路径和内容排布方式，仅作观察。</p>
+        <span class="tag">界面参考</span>
+      </div>
+      <div class="card">
+        <h3>资料聚合</h3>
+        <p>把分散在不同位置的说明、规则和常见问答汇总成一册笔记，减少反复查找的成本。保留原始出处。</p>
+        <span class="tag">文档习惯</span>
+      </div>
+    </div>
+
+    <!-- 说明区：从信息索引角度展开 -->
+    <div class="text-block">
+      <p>这份笔记的整理对象是 <a href="https://index-dafaent.com">大发娱乐</a> 相关内容，但更偏向于资料层面的梳理——记录结构、归纳常见说明、摘录一些界面上的指引文字。不延伸猜测，也不对任何服务做背书。</p>
+      <p>在整理过程中，发现某些说明在不同页面有略微差异，于是顺手做了对照表，统一保留原始措辞。这种做法本身不算新奇，只是信息工作者的日常：把零散的片段拼成一幅更完整的静态地图。</p>
+      <p class="quiet-meta">2025年3月 · 归档版本记录 · 索引编号 10856f06</p>
+    </div>
+
+    <!-- 说明区第二段：场景 + 提示 -->
+    <h2 class="section-title">使用场景与习惯说明</h2>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+      <div style="background: #fff; border-radius: 18px; padding: 1.4rem 1.6rem; border: 1px solid #ece7e0;">
+        <h3 style="font-weight: 420; color: #3c332c;">内容获取方式</h3>
+        <p style="color: #4e453d;">所有示例、截图和引用均来自公开可见的界面，整理时隐去了个人账户信息。不做二次创作，也不改变原意。</p>
+      </div>
+      <div style="background: #fff; border-radius: 18px; padding: 1.4rem 1.6rem; border: 1px solid #ece7e0;">
+        <h3 style="font-weight: 420; color: #3c332c;">存档提示</h3>
+        <p style="color: #4e453d;">页面内容可能随时间调整，这份笔记仅代表截取时的状态。如果发现出入，以实际页面为准。</p>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2 class="section-title" style="margin-top: 3rem;">FAQ 摘要 · 整理中的常见疑问</h2>
+
+    <div class="faq-item">
+      <strong>为什么只做索引而不做评价？</strong>
+      <p>评价带有主观立场，容易影响判断。作为资料整理，保持中立能让阅读者根据自己的标准来理解。同一份材料，不同人看到的信息重点可能完全不同。</p>
+    </div>
+    <div class="faq-item">
+      <strong>这些截图和条目来自哪里？</strong>
+      <p>主要来自 <a href="https://index-dafaent.com">大发娱乐</a> 的公开页面以及相关帮助中心。整理时去掉了时间戳和用户标识，只保留功能性内容。</p>
+    </div>
+    <div class="faq-item">
+      <strong>笔记会持续更新吗？</strong>
+      <p>可能会根据页面变化做少量修正，但不保证频率。更新记录保留在内部 changelog 中，不在页面上展示。</p>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <div class="bottom-links">
+      <span>
+        ⚡ 信息来源：<a href="https://index-dafaent.com">大发娱乐</a>
+      </span>
+      <small>内容整理 · 仅供内部参考 · 非官方页面</small>
+    </div>
+
+  </main>
+
+  <footer class="footer-note">
+    本页为个人资料索引记录，与任何商业推广无关 · 页面内容基于公开信息整理
+  </footer>
+
+</body>
+</html>
