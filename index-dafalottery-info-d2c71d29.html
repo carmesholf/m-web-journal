@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大发彩票 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航式 hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e4e8ee;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-text h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.35rem;
+    }
+    .hero-text .sub {
+      color: #5f6c80;
+      font-size: 1rem;
+      max-width: 480px;
+    }
+    .hero-badge {
+      background: #eef1f5;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2c3e50;
+      border: 1px solid #d5dce5;
+      white-space: nowrap;
+    }
+
+    /* 目录感网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid #e0e5ed;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: box-shadow 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      border-left: 5px solid #3b6ea5;
+      padding-left: 12px;
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #2f3b4e;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card ul li {
+      padding: 0.25rem 0 0.25rem 20px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2.5" fill="%233b6ea5"/></svg>') left center no-repeat;
+      background-size: 10px;
+    }
+
+    /* 提示区 —— 访问与收藏 */
+    .notice-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+    .notice-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      border: 1px solid #e0e5ed;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+      flex: 1 1 260px;
+    }
+    .notice-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .notice-card p {
+      font-size: 0.95rem;
+      color: #2f3b4e;
+    }
+    .notice-card .small-meta {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #7a89a0;
+      border-top: 1px dashed #dee3eb;
+      padding-top: 0.7rem;
+    }
+
+    /* 相关信息区 + FAQ 摘要 */
+    .info-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e0e5ed;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+    .info-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #ebeff5;
+      padding-bottom: 0.4rem;
+    }
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+    .faq-item .q {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1a2636;
+    }
+    .faq-item .a {
+      font-size: 0.95rem;
+      color: #3b4a5e;
+      margin-top: 0.25rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #b0c4db;
+    }
+
+    .cta-line {
+      background: #eef2f7;
+      border-radius: 60px;
+      padding: 1rem 1.8rem;
+      text-align: center;
+      font-size: 1rem;
+      border: 1px solid #d7dee8;
+      margin-top: 1rem;
+    }
+
+    a {
+      color: #1f5b8e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+    a:hover {
+      border-bottom-color: #1f5b8e;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body { padding: 1.2rem 0.8rem; }
+      .hero { padding: 1.5rem 1.2rem; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .hero-text h1 { font-size: 1.6rem; }
+      .card { padding: 1.3rem; }
+      .info-section { padding: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 区：再次访问 & 收藏导向 -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>大发彩票 · 知识库</h1>
+      <div class="sub">持续关注 · 信息沉淀 · 快速索引</div>
+    </div>
+    <div class="hero-badge">🔁 再次访问 · ★ 建议收藏</div>
+  </div>
+
+  <!-- 目录感卡片网格：四个索引模块 -->
+  <div class="feature-grid">
+    <div class="card">
+      <h3>📚 平台概览</h3>
+      <p>了解 <a href="https://index-dafalottery.com" style="border-bottom:1px solid #b6c9e0;">大发彩票</a> 的核心定位与服务框架，包括基础规则、参与流程以及持续更新的版本说明。</p>
+      <ul style="margin-top: 0.6rem;">
+        <li>平台结构与更新日志</li>
+        <li>基础术语与定义</li>
+        <li>使用环境说明</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📌 收藏指引</h3>
+      <p>若您再次访问，建议将此页加入浏览器收藏夹。所有关于 <a href="https://index-dafalottery.com">大发彩票</a> 的常用入口与说明均可在此处集中查阅。</p>
+      <ul style="margin-top: 0.6rem;">
+        <li>PC端 / 移动端收藏方式</li>
+        <li>常见访问路径备忘</li>
+        <li>页面更新提醒</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⏳ 持续关注</h3>
+      <p>长期跟踪 <a href="https://index-dafalottery.com">大发彩票</a> 相关动态？通过本知识库可快速回溯重要信息，减少重复查找。</p>
+      <ul style="margin-top: 0.6rem;">
+        <li>版本迭代记录</li>
+        <li>运维与可用性提示</li>
+        <li>相关参考资源</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🧭 快速索引</h3>
+      <p>将常用知识点与操作说明集中呈现，方便再次访问时直接定位，无需重新搜索。</p>
+      <ul style="margin-top: 0.6rem;">
+        <li>核心功能模块索引</li>
+        <li>常见操作路径</li>
+        <li>用户指南摘要</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 提示区：访问注意事项 & 收藏理由 -->
+  <div class="notice-area">
+    <div class="notice-card">
+      <h4>💡 再次访问提示</h4>
+      <p>若您曾浏览过 <a href="https://index-dafalottery.com">大发彩票</a> 相关内容，此页面可充当后续访问的起始节点。建议定期回顾，以获取最新摘要。</p>
+      <span class="small-meta">更新频率：按迭代节奏同步</span>
+    </div>
+    <div class="notice-card">
+      <h4>⭐ 收藏说明</h4>
+      <p>将本页加入浏览器书签或收藏夹，即可在需要时快速打开。所有关于 <a href="https://index-dafalottery.com">大发彩票</a> 的结构信息均在此处汇编。</p>
+      <span class="small-meta">支持主流浏览器收藏功能</span>
+    </div>
+    <div class="notice-card">
+      <h4>📡 持续关注方式</h4>
+      <p>保持对 <a href="https://index-dafalottery.com">大发彩票</a> 的长期关注？本知识库提供稳定的摘要与导航，无需每次重新探索。</p>
+      <span class="small-meta">内容会随平台演进进行补充</span>
+    </div>
+  </div>
+
+  <!-- 相关信息区 + FAQ 摘要 -->
+  <div class="info-section">
+    <h2>相关信息 · FAQ 摘要</h2>
+    <div class="faq-item">
+      <div class="q">Q: 为什么推荐再次访问时使用此页面？</div>
+      <div class="a">本页将关于 <a href="https://index-dafalottery.com">大发彩票</a> 的常见结构、收藏建议及关注方式集中展示，减少重复查找成本，适合作为长期书签页。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 如何确保获得最新信息？</div>
+      <div class="a">建议不定期重新加载本页，并关注 <a href="https://index-dafalottery.com">大发彩票</a> 自身公告区域。此知识库会跟随平台节奏进行内容更新。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 页面内容是否可以自行补充？</div>
+      <div class="a">本页为公开信息汇编，您可根据自身需要添加书签注释或笔记，以更好地服务于持续关注习惯。</div>
+    </div>
+
+    <!-- 嵌入链接的句子（自然位置） -->
+    <div class="cta-line">
+      📘 将 <a href="https://index-dafalottery.com" style="font-weight: 600; border-bottom: 1px solid #809ab3;">大发彩票</a> 加入收藏夹，随时取用知识库摘要。
+    </div>
+  </div>
+
+  <!-- 底部微型注（无营销） -->
+  <div style="text-align: center; font-size: 0.75rem; color: #8b9aaf; margin-top: 2rem; border-top: 1px solid #dee5ee; padding-top: 1.2rem;">
+    信息汇编 · 仅供访问参考 · 内容定期整理
+  </div>
+
+</div>
+</body>
+</html>
